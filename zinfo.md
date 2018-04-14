@@ -7,3 +7,6 @@ https://www.udemy.com/react-native-expo-from-beginner-to-pro-also-with-meteorjs/
 
 orig: 
 https://github.com/tscans/TodoUdemyApp/blob/master/App.js
+
+
+....
