@@ -6,9 +6,8 @@ https://exp.host/@edxael/01-todo-1
 
 
 
-## ====================================
+
 ## BASIC DEPLOYMENT USING THE EXPO APP.
-## ====================================
 
 
 ### Publishing to Expo's React Native Community
