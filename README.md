@@ -1,11 +1,15 @@
 
-# Info about this app
+# Info about this ToDo-App
 
-### the build code is on the branch: 
-todo-build-1
+Live App link: [Edxael-ToDo-App](https://exp.host/@edxael/01-todo-1)
+
+![Screen Shoot](/img/sc01.png)
 
 ### This app can be access: 
 https://exp.host/@edxael/01-todo-1
+
+### the build code is on the branch: 
+todo-build-1
 
 
 
