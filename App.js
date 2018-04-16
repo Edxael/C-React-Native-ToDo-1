@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { ConfirmDialog } from 'react-native-simple-dialogs';
+import dismissKeyboard from 'react-native-dismiss-keyboard'
 
 
 export default class App extends React.Component {
@@ -28,6 +29,7 @@ export default class App extends React.Component {
     var arr = this.state.data;
     arr.push( this.state.text );
     this.setState({ data: arr, text: '' });
+    dismissKeyboard()
   }
 
   render() {
