@@ -5,7 +5,6 @@ import dismissKeyboard from 'react-native-dismiss-keyboard'
 
 
 export default class App extends React.Component {
-
   state = { data: [], text: '', showcf: false, dialogVisible: false, itemToDel: '' }
 
   questionDelete = (x) => {
@@ -32,36 +31,41 @@ export default class App extends React.Component {
     dismissKeyboard()
   }
 
-  render() {
 
+
+  render() {
     return (
       <View style={styles.container}>
 
-        <Text>Edxael Todo App 1.4</Text>
-        <TextInput style={styles.myinput} onChangeText={ (text) => { this.setState({ text: text }) } } value={this.state.text} underlineColorAndroid={'transparent'}/>
-        <Button title="Add To-Do" onPress={this.addTodo} />
+        <View style={styles.center1}>
 
-        <ConfirmDialog
-          title={ `Delete: ${this.state.itemToDel} ???` }
-          message="Are you sure about that?"
-          visible={this.state.dialogVisible}
-          onTouchOutside={() => this.setState({dialogVisible: false})}
-          positiveButton={{
-              title: "YES",
-              onPress: () => { this.deleteItem() }
-          }}
-          negativeButton={{
-              title: "NO",
-              onPress: () => this.setState({dialogVisible: false})
-          }}
-        /> 
+            <Text style={styles.title1}>Edxael: ToDo-App 1.3</Text>
+            <TextInput style={styles.myinput} onChangeText={ (text) => { this.setState({ text: text }) } } value={this.state.text} underlineColorAndroid={'transparent'}/>
+            <Button title="Add To-Do" onPress={this.addTodo} />
 
-        <Text> - - - - - - - - - - - - - - - - - - - - - - - </Text>
+            <ConfirmDialog
+              title={ `Delete: ${this.state.itemToDel} ???` }
+              message="Are you sure about that?"
+              visible={this.state.dialogVisible}
+              onTouchOutside={() => this.setState({dialogVisible: false})}
+              positiveButton={{
+                  title: "YES",
+                  onPress: () => { this.deleteItem() }
+              }}
+              negativeButton={{
+                  title: "NO",
+                  onPress: () => this.setState({dialogVisible: false})
+              }}
+            /> 
 
-        { this.renderTodos() }
+            <Text> - - - - - - - - - - - - - - - - - - - - - - - </Text>
 
-        <Text> - - - - - - - - - - - - - - - - - - - - - - - </Text>
-        <Text> By: Edmundo Rubio. </Text>
+            { this.renderTodos() }
+
+            <Text> - - - - - - - - - - - - - - - - - - - - - - - </Text>
+            <Text> By: Edmundo Rubio. </Text>
+
+          </View>
         
       </View>
     );
@@ -69,14 +73,14 @@ export default class App extends React.Component {
 }
 
 
-
-
+  // -----[ STYLING ]-----------------------------------
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 30,
     backgroundColor: '#B39DDB',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 30,
+    paddingTop: 45
   }, 
   myinput: {
     height: 40,
@@ -92,28 +96,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#64B5F6',
     justifyContent: 'center',
     borderColor: 'black',
+    paddingLeft: 5,
+    paddingTop: 9,
     width: 200,
-    height: 30,
+    height: 40,
     borderWidth: 1
+  }, 
+  center1: {
+    backgroundColor: 'rgba(254, 254, 254, 0.5)',
+    borderWidth: 3,
+    borderColor: 'white',
+    padding: 20,
+    alignItems: 'center'
+  },
+  title1: {
+    fontSize: 22,
+    marginBottom: 5
   }
 });
-
-
-
-
-
-
-// { this.state.showcf ? <ConfirmDialog
-//   title={ `Delete: ${this.state.itemToDel} ???` }
-//   message="Are you sure about that?"
-//   visible={this.state.dialogVisible}
-//   onTouchOutside={() => this.setState({dialogVisible: false})}
-//   positiveButton={{
-//       title: "YES",
-//       onPress: () => { this.deleteItem() }
-//   }}
-//   negativeButton={{
-//       title: "NO",
-//       onPress: () => this.setState({dialogVisible: false})
-//   }}
-// /> : <Text>...</Text> }
